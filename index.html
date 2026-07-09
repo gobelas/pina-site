@@ -178,7 +178,10 @@
 
   .estado{
     position: relative;
-    margin-top: 2.6rem;
+    margin-top: 1.6rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -206,10 +209,27 @@
     100% { box-shadow: 0 0 0 0 rgba(124,179,66,0); }
   }
 
+
+  .estado:active{
+      transform: scale(0.95);
+    }
+  
+    .estado.off{
+      border-color: rgba(255,77,77,0.45);
+      background: rgba(255,77,77,0.08);
+      color: #ff6b6b;
+    }
+  
+    .estado.off .punto{
+      background: #ff4d4d;
+      animation: none;
+      box-shadow: none;
+    }
+  
   footer{
     position: relative;
     z-index: 1;
-    padding: 1.6rem;
+    padding: 0.8rem;
     text-align: center;
     font-size: 0.72rem;
     letter-spacing: 0.06em;
@@ -235,7 +255,7 @@
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
     <span class="copy-hint" id="copyHint"></span>
-    <div class="estado"><span class="punto"></span> Pine mode: on</div>
+    <div class="estado" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: on</span></div>
   </main>
   <footer>made with pineapple juice</footer>
 
@@ -247,6 +267,13 @@
       hint.textContent = 'copied!';
       setTimeout(() => { hint.textContent = ''; }, 1500);
     });
+  }
+
+  function toggleModo(){
+    const estado = document.getElementById('estado');
+    const texto = document.getElementById('estadoTexto');
+    const isOff = estado.classList.toggle('off');
+    texto.textContent = isOff ? 'Pine mode: off' : 'Pine mode: on';
   }
 </script>
 </body>
