@@ -234,21 +234,20 @@
       <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca" onclick="copiarCA()">0xb20000000000000000000063cb5e45a7bcb7c701</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
-    <span class="copy-hint" id="copyHint">tap the CA to copy</span>
+    <span class="copy-hint" id="copyHint"></span>
     <div class="estado"><span class="punto"></span> Pine mode: on</div>
   </main>
   <footer>made with pineapple juice</footer>
 
-  <script>
-    function copiarCA(){
-      const ca = document.getElementById('ca').textContent;
-      const hint = document.getElementById('copyHint');
-      navigator.clipboard.writeText(ca).then(() => {
-        const original = hint.textContent;
-        hint.textContent = 'copied!';
-        setTimeout(() => { hint.textContent = original; }, 1500);
-      });
-    }
-  </script>
+<script>
+  function copiarCA(){
+    const ca = document.getElementById('ca').textContent;
+    const hint = document.getElementById('copyHint');
+    navigator.clipboard.writeText(ca).then(() => {
+      hint.textContent = 'copied!';
+      setTimeout(() => { hint.textContent = ''; }, 1500);
+    });
+  }
+</script>
 </body>
 </html>
