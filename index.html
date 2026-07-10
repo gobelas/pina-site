@@ -17,6 +17,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
+<audio id="pineAudio" src="/pine-loop.mp3" loop preload="auto"></audio>
+  
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
@@ -263,13 +265,24 @@
   <footer>made with pineapple juice</footer>
 
 <script>
-  function copiarCA(){
-    const ca = document.getElementById('ca').textContent;
-    const hint = document.getElementById('copyHint');
-    navigator.clipboard.writeText(ca).then(() => {
-      hint.textContent = 'copied!';
-      setTimeout(() => { hint.textContent = ''; }, 1500);
-    });
+    const audio = document.getElementById('pineAudio');
+  let fadeInterval;
+
+  function fadeAudio(target, duration = 500){
+    clearInterval(fadeInterval);
+    const steps = 20;
+    const stepTime = duration / steps;
+    const startVol = audio.volume;
+    const diff = target - startVol;
+    let i = 0;
+    fadeInterval = setInterval(() => {
+      i++;
+      audio.volume = Math.max(0, Math.min(1, startVol + diff * (i / steps)));
+      if(i >= steps){
+        clearInterval(fadeInterval);
+        if(target === 0) audio.pause();
+      }
+    }, stepTime);
   }
 
   function toggleModo(){
@@ -277,7 +290,24 @@
     const texto = document.getElementById('estadoTexto');
     const isOff = estado.classList.toggle('off');
     texto.textContent = isOff ? 'Pine mode: off' : 'Pine mode: on';
+
+    if(isOff){
+      fadeAudio(0);
+    } else {
+      audio.volume = 0;
+      audio.play();
+      fadeAudio(0.6);
+    }
   }
+  
+  function copiarCA(){
+    const ca = document.getElementById('ca').textContent;
+    const hint = document.getElementById('copyHint');
+    navigator.clipboard.writeText(ca).then(() => {
+      hint.textContent = 'copied!';
+      setTimeout(() => { hint.textContent = ''; }, 1500);
+    });
+  } 
 </script>
 </body>
 </html>
