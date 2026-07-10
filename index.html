@@ -181,6 +181,70 @@
     color: var(--cream-dim);
   }
 
+  .buy-section{
+    width: min(90vw, 420px);
+    margin-top: 2rem;
+  }
+
+  .buy-eyebrow{
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin: 0 0 0.9rem;
+  }
+
+  .buy-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .buy-btn{
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 14px;
+    background: rgba(245,240,225,0.03);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .buy-btn:hover{
+    border-color: rgba(255,194,51,0.6);
+    background: rgba(245,240,225,0.06);
+    transform: translateY(-2px);
+  }
+
+  .buy-btn img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .buy-btn .buy-text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    text-align: left;
+  }
+
+  .buy-btn .buy-name{
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--cream);
+  }
+
+  .buy-btn .buy-sub{
+    font-size: 0.68rem;
+    color: var(--cream-dim);
+    letter-spacing: 0.02em;
+  }
+  
   .estado{
     position: relative;
     margin-top: 1.6rem;
@@ -260,6 +324,23 @@
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
     <span class="copy-hint" id="copyHint"></span>
+    <div class="buy-section">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://aerodrome.finance/swap?from=0xb20000000000000000000063cb5e45a7bcb7c701&to=eth&chain0=8453&chain1=8453" target="_blank" rel="noopener noreferrer">
+          <img src="/aerodrome.png" alt="Aerodrome" />
+          <span class="buy-text"><span class="buy-name">Aerodrome</span><span class="buy-sub">Swap on Base</span></span>
+        </a>
+        <a class="buy-btn" href="https://app.uniswap.org/#/swap?inputCurrency=0xb20000000000000000000063cb5e45a7bcb7c701&outputCurrency=ETH&chain=base" target="_blank" rel="noopener noreferrer">
+          <img src="/uniswap.png" alt="Uniswap" />
+          <span class="buy-text"><span class="buy-name">Uniswap</span><span class="buy-sub">Swap on Base</span></span>
+        </a>
+        <a class="buy-btn" href="https://launch.o1.exchange/token/0xB20000000000000000000063cB5e45a7BCB7c701?swap=sell" target="_blank" rel="noopener noreferrer">
+          <img src="/o1.png" alt="o1.exchange" />
+          <span class="buy-text"><span class="buy-name">o1.exchange</span><span class="buy-sub">Launch page</span></span>
+        </a>
+      </div>
+    </div>
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
   </main>
   <footer>made with pineapple juice</footer>
