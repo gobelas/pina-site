@@ -18,7 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
 <audio id="pineAudio" src="/pine-theme.mp3" loop preload="auto"></audio>
-  
+
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
@@ -124,10 +124,54 @@
     text-shadow: 0 2px 0 rgba(0,0,0,0.15);
   }
 
+  .chain-tabs{
+    display: flex;
+    gap: 0.6rem;
+    width: min(90vw, 420px);
+    margin-top: 1.8rem;
+  }
+
+  .chain-tab{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(245,240,225,0.12);
+    border-radius: 12px;
+    background: rgba(245,240,225,0.03);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+  }
+
+  .chain-tab img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .chain-tab:hover:not(.active){
+    border-color: rgba(245,240,225,0.25);
+  }
+
+  .chain-tab.active{
+    border-color: rgba(255,194,51,0.6);
+    background: rgba(255,194,51,0.08);
+    color: var(--cream);
+  }
+
   .info-card{
     position: relative;
     width: min(90vw, 420px);
-    margin: 1.8rem 0 0;
+    margin: 1rem 0 0;
     padding: 0.4rem 1.3rem;
     border: 1px solid rgba(255,194,51,0.28);
     border-radius: 16px;
@@ -244,7 +288,7 @@
     color: var(--cream-dim);
     letter-spacing: 0.02em;
   }
-  
+
   .estado{
     position: relative;
     margin-top: 1.6rem;
@@ -278,23 +322,22 @@
     100% { box-shadow: 0 0 0 0 rgba(124,179,66,0); }
   }
 
-
   .estado:active{
-      transform: scale(0.95);
-    }
-  
-    .estado.off{
-      border-color: rgba(255,77,77,0.45);
-      background: rgba(255,77,77,0.08);
-      color: #ff6b6b;
-    }
-  
-    .estado.off .punto{
-      background: #ff4d4d;
-      animation: none;
-      box-shadow: none;
-    }
-  
+    transform: scale(0.95);
+  }
+
+  .estado.off{
+    border-color: rgba(255,77,77,0.45);
+    background: rgba(255,77,77,0.08);
+    color: #ff6b6b;
+  }
+
+  .estado.off .punto{
+    background: #ff4d4d;
+    animation: none;
+    box-shadow: none;
+  }
+
   footer{
     position: relative;
     z-index: 1;
@@ -317,14 +360,33 @@
     <img class="mascota" src="/favicon.png" alt="Just a pineapple with sunglasses. What else?" />
     <p class="eyebrow">Certified tropical flavor</p>
     <h1>PINE</h1>
-    <div class="info-card">
+
+    <div class="chain-tabs">
+      <div class="chain-tab active" data-chain="base" onclick="switchChain('base')">
+        <img src="/base-chain.png" alt="Base" /> Base
+      </div>
+      <div class="chain-tab" data-chain="hood" onclick="switchChain('hood')">
+        <img src="/robinhood.png" alt="Robinhood" /> Robinhood
+      </div>
+    </div>
+
+    <div class="info-card" id="info-base">
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Base</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
-      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca" onclick="copiarCA()">0xb20000000000000000000063cb5e45a7bcb7c701</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-base" onclick="copiarCA('ca-base')">0xb20000000000000000000063cb5e45a7bcb7c701</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
+
+    <div class="info-card" id="info-hood" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Robinhood</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-hood" onclick="copiarCA('ca-hood')">0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+
     <span class="copy-hint" id="copyHint"></span>
-    <div class="buy-section">
+
+    <div class="buy-section" id="buy-base">
       <p class="buy-eyebrow">Get some</p>
       <div class="buy-buttons">
         <a class="buy-btn" href="https://aerodrome.finance/swap?from=0xb20000000000000000000063cb5e45a7bcb7c701&to=eth&chain0=8453&chain1=8453" target="_blank" rel="noopener noreferrer">
@@ -341,6 +403,21 @@
         </a>
       </div>
     </div>
+
+    <div class="buy-section" id="buy-hood" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://bow.fun/index.html?token=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03" target="_blank" rel="noopener noreferrer">
+          <img src="/bowfun.png" alt="bow.fun" />
+          <span class="buy-text"><span class="buy-name">bow.fun</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
+        </a>
+        <a class="buy-btn" href="https://app.uniswap.org/swap?inputCurrency=ETH&outputCurrency=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03&chain=hood" target="_blank" rel="noopener noreferrer">
+          <img src="/uniswap.png" alt="Uniswap" />
+          <span class="buy-text"><span class="buy-name">Uniswap</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
+        </a>
+      </div>
+    </div>
+
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
   </main>
   <footer>made with pineapple juice</footer>
@@ -380,15 +457,24 @@
       fadeAudio(0.6);
     }
   }
-  
-  function copiarCA(){
-    const ca = document.getElementById('ca').textContent;
+
+  function copiarCA(id){
+    const ca = document.getElementById(id).textContent;
     const hint = document.getElementById('copyHint');
     navigator.clipboard.writeText(ca).then(() => {
       hint.textContent = 'copied!';
       setTimeout(() => { hint.textContent = ''; }, 1500);
     });
-  } 
+  }
+
+  function switchChain(chain){
+    document.querySelectorAll('.chain-tab').forEach(t => t.classList.toggle('active', t.dataset.chain === chain));
+    document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
+    document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
+    document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
+    document.getElementById('buy-hood').style.display = chain === 'hood' ? '' : 'none';
+    document.getElementById('copyHint').textContent = '';
+  }
 </script>
 </body>
 </html>
