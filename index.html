@@ -360,7 +360,7 @@
     <img class="mascota" src="/favicon.png" alt="Just a pineapple with sunglasses. What else?" />
     <p class="eyebrow">Certified tropical flavor</p>
     <h1>PINE</h1>
- 
+
     <div class="chain-tabs">
       <div class="chain-tab active" data-chain="base" onclick="switchChain('base')">
         <img src="/base-chain.png" alt="Base" /> Base
@@ -369,35 +369,23 @@
         <img src="/robinhood.png" alt="Robinhood" /> Robinhood
       </div>
     </div>
- 
-    <div class="launch-tabs" id="launch-tabs" style="display:none">
-      <div class="launch-tab active" data-launch="bow" onclick="switchLaunch('bow')">bow.fun</div>
-      <div class="launch-tab" data-launch="vlad" onclick="switchLaunch('vlad')">vlad.fun</div>
-    </div>
- 
+
     <div class="info-card" id="info-base">
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Base</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
       <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-base" onclick="copiarCA('ca-base')">0xb20000000000000000000063cb5e45a7bcb7c701</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
- 
-    <div class="info-card" id="info-bow" style="display:none">
+
+    <div class="info-card" id="info-hood" style="display:none">
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Robinhood</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
-      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-bow" onclick="copiarCA('ca-bow')">0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-hood" onclick="copiarCA('ca-hood')">0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
- 
-    <div class="info-card" id="info-vlad" style="display:none">
-      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Robinhood</span></div>
-      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
-      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-vlad" onclick="copiarCA('ca-vlad')">0x01708bcC98a4188CF2Aa7F5b8F49eFA62e6548aF</span></div>
-      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
-    </div>
- 
+
     <span class="copy-hint" id="copyHint"></span>
- 
+
     <div class="buy-section" id="buy-base">
       <p class="buy-eyebrow">Get some</p>
       <div class="buy-buttons">
@@ -415,43 +403,37 @@
         </a>
       </div>
     </div>
- 
-    <div class="buy-section" id="buy-bow" style="display:none">
+
+    <div class="buy-section" id="buy-hood" style="display:none">
       <p class="buy-eyebrow">Get some</p>
       <div class="buy-buttons">
-        <a class="buy-btn" href="https://bow.fun/index.html?token=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03" target="_blank" rel="noopener noreferrer">
-          <img src="/bowfun.jpg" alt="bow.fun" />
-          <span class="buy-text"><span class="buy-name">bow.fun</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
-        </a>
+            
         <a class="buy-btn" href="https://app.uniswap.org/swap?inputCurrency=ETH&outputCurrency=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03&chain=hood" target="_blank" rel="noopener noreferrer">
           <img src="/uniswap.png" alt="Uniswap" />
           <span class="buy-text"><span class="buy-name">Uniswap</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
         </a>
+
         <a class="buy-btn" href="https://pancakeswap.finance/swap?chain=robinhood&inputCurrency=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03&outputCurrency=ETH&exactAmount=&exactField=INPUT" target="_blank" rel="noopener noreferrer">
-          <img src="/pancake.jpg" alt="PancakeSwap" />
-          <span class="buy-text"><span class="buy-name">PancakeSwap</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
+          <img src="/pancake.jpg" alt="Uniswap" />
+          <span class="buy-text"><span class="buy-name">Uniswap</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
+        </a>    
+        
+        <a class="buy-btn" href="https://bow.fun/index.html?token=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03" target="_blank" rel="noopener noreferrer">
+          <img src="/bowfun.png" alt="bow.fun" />
+          <span class="buy-text"><span class="buy-name">bow.fun</span><span class="buy-sub">Launch page</span></span>
         </a>
+        
       </div>
     </div>
- 
-    <div class="buy-section" id="buy-vlad" style="display:none">
-      <p class="buy-eyebrow">Get some</p>
-      <div class="buy-buttons">
-        <a class="buy-btn" href="https://www.vlad.fun/coin/0x01708bcC98a4188CF2Aa7F5b8F49eFA62e6548aF" target="_blank" rel="noopener noreferrer">
-          <img src="/vladdotfun.jpg" alt="vlad.fun" />
-          <span class="buy-text"><span class="buy-name">vlad.fun</span><span class="buy-sub">Swap on Robinhood Chain</span></span>
-        </a>
-      </div>
-    </div>
- 
+
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
   </main>
   <footer>made with pineapple juice</footer>
- 
+
 <script>
     const audio = document.getElementById('pineAudio');
   let fadeInterval;
- 
+
   function fadeAudio(target, duration = 500){
     clearInterval(fadeInterval);
     const steps = 20;
@@ -468,13 +450,13 @@
       }
     }, stepTime);
   }
- 
+
   function toggleModo(){
     const estado = document.getElementById('estado');
     const texto = document.getElementById('estadoTexto');
     const isOff = estado.classList.toggle('off');
     texto.textContent = isOff ? 'Pine mode: off' : 'Pine mode: on';
- 
+
     if(isOff){
       fadeAudio(0);
     } else {
@@ -483,7 +465,7 @@
       fadeAudio(0.6);
     }
   }
- 
+
   function copiarCA(id){
     const ca = document.getElementById(id).textContent;
     const hint = document.getElementById('copyHint');
@@ -492,7 +474,7 @@
       setTimeout(() => { hint.textContent = ''; }, 1500);
     });
   }
- 
+
   function switchChain(chain){
     document.querySelectorAll('.chain-tab').forEach(t => t.classList.toggle('active', t.dataset.chain === chain));
     document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
