@@ -365,6 +365,9 @@
       <div class="chain-tab active" data-chain="base" onclick="switchChain('base')">
         <img src="/base-chain.png" alt="Base" /> Base
       </div>
+      <div class="chain-tab" data-chain="solana" onclick="switchChain('solana')">
+        <img src="/solana.jpg" alt="Solana" /> Solana
+      </div>
       <div class="chain-tab" data-chain="hood" onclick="switchChain('hood')">
         <img src="/robinhood.png" alt="Robinhood" /> Robinhood
       </div>
@@ -374,6 +377,13 @@
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Base</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
       <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-base" onclick="copiarCA('ca-base')">0xb20000000000000000000063cb5e45a7bcb7c701</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+
+    <div class="info-card" id="info-solana" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Solana</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">SOL</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-solana" onclick="copiarCA('ca-solana')">TJvhqRGcE2oJxQ7U2oKzSfboxZbGAyDR5f2JNpupump</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
 
@@ -404,11 +414,25 @@
       </div>
     </div>
 
+    <div class="buy-section" id="buy-solana" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://pump.fun/coin/TJvhqRGcE2oJxQ7U2oKzSfboxZbGAyDR5f2JNpupump" target="_blank" rel="noopener noreferrer">
+          <img src="/pumpfun.jpg" alt="pump.fun" />
+          <span class="buy-text"><span class="buy-name">pump.fun</span><span class="buy-sub">Swap on Solana</span></span>
+        </a>
+        <a class="buy-btn" href="https://trade.padre.gg/trade/solana/TJvhqRGcE2oJxQ7U2oKzSfboxZbGAyDR5f2JNpupump" target="_blank" rel="noopener noreferrer">
+          <img src="/tradingterminal.jpg" alt="Padre" />
+          <span class="buy-text"><span class="buy-name">Padre</span><span class="buy-sub">Trade on Solana</span></span>
+        </a>
+      </div>
+    </div>
+
     <div class="buy-section" id="buy-hood" style="display:none">
       <p class="buy-eyebrow">Get some</p>
       <div class="buy-buttons">
             
-        <a class="buy-btn" href=https://robinfun.live/token/0xe2c2ce90ced9eeb373b7260078eb1b7bc36c4663" target="_blank" rel="noopener noreferrer">
+        <a class="buy-btn" href="https://robinfun.live/token/0xe2c2ce90ced9eeb373b7260078eb1b7bc36c4663" target="_blank" rel="noopener noreferrer">
           <img src="/robinfun.jpg" alt="robinfun.live" />
           <span class="buy-text"><span class="buy-name">robinfun.live</span><span class="buy-sub">0xe2c2ce90ced9eeb373b7260078eb1b7bc36c4663</span></span>
         </a>
@@ -488,8 +512,10 @@
   function switchChain(chain){
     document.querySelectorAll('.chain-tab').forEach(t => t.classList.toggle('active', t.dataset.chain === chain));
     document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
+    document.getElementById('info-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
+    document.getElementById('buy-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('buy-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('copyHint').textContent = '';
   }
