@@ -339,10 +339,12 @@
     border: 1px solid rgba(255,194,51,0.35);
   }
 
-  .roadmap-item.mystery .roadmap-mark{
-    background: rgba(245,240,225,0.05);
-    color: var(--cream-dim);
-    border: 1px solid rgba(245,240,225,0.15);
+  .roadmap-item.pending .roadmap-mark::after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
   }
 
   .roadmap-text{
@@ -563,8 +565,12 @@
         <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Pineapple wearing sunglasses</span></div>
         <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Website that plays synthwave</span></div>
         <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Deploy on three different chains for no reason</span></div>
-        <div class="roadmap-item mystery"><span class="roadmap-mark">?</span><span class="roadmap-text">???</span></div>
-        <div class="roadmap-item pending"><span class="roadmap-mark">🍍</span><span class="roadmap-text">Pineapple (again)</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">Discover utility (maybe)</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">Buy a Lambo</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">Learn to parallel park</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">File a noise complaint against the neighbors</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">Cataract surgery (so we can finally read the chart)</span></div>                   
+        <div class="roadmap-item pending"><span class="roadmap-mark"></span><span class="roadmap-text">Pineapple (again)</span></div>
       </div>
     </div>
     
