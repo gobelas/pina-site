@@ -289,6 +289,73 @@
     letter-spacing: 0.02em;
   }
 
+  .roadmap-section{
+    width: min(90vw, 420px);
+    margin-top: 2.4rem;
+  }
+
+  .roadmap-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 16px;
+    background: rgba(245,240,225,0.03);
+    overflow: hidden;
+  }
+
+  .roadmap-item{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid rgba(245,240,225,0.08);
+    text-align: left;
+  }
+
+  .roadmap-item:last-child{ border-bottom: none; }
+
+  .roadmap-mark{
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .roadmap-item.done .roadmap-mark{
+    background: rgba(124,179,66,0.15);
+    color: var(--leaf);
+    border: 1px solid rgba(124,179,66,0.4);
+  }
+
+  .roadmap-item.pending .roadmap-mark{
+    background: rgba(255,194,51,0.1);
+    color: var(--gold);
+    border: 1px solid rgba(255,194,51,0.35);
+  }
+
+  .roadmap-item.mystery .roadmap-mark{
+    background: rgba(245,240,225,0.05);
+    color: var(--cream-dim);
+    border: 1px solid rgba(245,240,225,0.15);
+  }
+
+  .roadmap-text{
+    font-size: 0.85rem;
+    color: var(--cream);
+  }
+
+  .roadmap-item.done .roadmap-text{
+    color: var(--cream-dim);
+    text-decoration: line-through;
+    text-decoration-color: rgba(245,240,225,0.3);
+  }
+  
   .estado{
     position: relative;
     margin-top: 1.6rem;
@@ -488,8 +555,21 @@
     </div>
 
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
+    
+    <div class="roadmap-section">
+      <p class="buy-eyebrow">Roadmap</p>
+      <div class="roadmap-list">
+        <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Pineapple</span></div>
+        <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Pineapple wearing sunglasses</span></div>
+        <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Website that plays synthwave</span></div>
+        <div class="roadmap-item done"><span class="roadmap-mark">✓</span><span class="roadmap-text">Deploy on three different chains for no reason</span></div>
+        <div class="roadmap-item mystery"><span class="roadmap-mark">?</span><span class="roadmap-text">???</span></div>
+        <div class="roadmap-item pending"><span class="roadmap-mark">🍍</span><span class="roadmap-text">Pineapple (again)</span></div>
+      </div>
+    </div>
+    
   </main>
-  <footer>made with pineapple juice</footer>
+  <footer>made with pineapple juice 🍍 </footer>
 
 <script>
     const audio = document.getElementById('pineAudio');
