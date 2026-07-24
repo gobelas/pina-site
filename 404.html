@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PINE — not found</title>
+<meta name="description" content="This pineapple isn't ripe yet." />
+<link rel="icon" type="image/png" href="/favicon.png?v=2" />
+<meta name="theme-color" content="#0c0f08" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #0c0f08;
+    --gold: #ffc233;
+    --leaf: #7cb342;
+    --coral: #ff6f61;
+    --cream: #f5f0e1;
+    --cream-dim: rgba(245,240,225,0.62);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  body::before{
+    content:"";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image:
+      repeating-linear-gradient(60deg, var(--gold) 0px, var(--gold) 1.5px, transparent 1.5px, transparent 34px),
+      repeating-linear-gradient(-60deg, var(--gold) 0px, var(--gold) 1.5px, transparent 1.5px, transparent 34px);
+  }
+
+  main{
+    position: relative;
+    z-index: 1;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8vh 6vw;
+  }
+
+  .glow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(70vw, 560px);
+    height: min(70vw, 560px);
+    transform: translate(-50%, -55%);
+    background: radial-gradient(circle, rgba(255,194,51,0.18) 0%, rgba(255,111,97,0.09) 40%, transparent 72%);
+    filter: blur(10px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .mascota{
+    position: relative;
+    width: clamp(100px, 18vw, 150px);
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1.8rem;
+    filter: drop-shadow(0 14px 28px rgba(0,0,0,0.55)) grayscale(0.6);
+    opacity: 0.85;
+  }
+
+  .code{
+    position: relative;
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-size: clamp(3rem, 12vw, 6.5rem);
+    line-height: 1;
+    margin: 0;
+    letter-spacing: 0.02em;
+    background: linear-gradient(180deg, var(--gold) 0%, #ffb347 45%, var(--coral) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  p.msg{
+    position: relative;
+    max-width: 32ch;
+    margin: 1.1rem 0 0;
+    font-size: clamp(1rem, 2.2vw, 1.15rem);
+    line-height: 1.55;
+    color: var(--cream-dim);
+  }
+
+  a.home{
+    position: relative;
+    margin-top: 2.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid rgba(255,194,51,0.35);
+    border-radius: 999px;
+    background: rgba(255,194,51,0.06);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease;
+  }
+
+  a.home:hover{
+    border-color: rgba(255,194,51,0.7);
+    background: rgba(255,194,51,0.12);
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="glow"></div>
+    <img class="mascota" src="/favicon.png" alt="A slightly confused pineapple" />
+    <h1 class="code">404</h1>
+    <p class="msg">This pineapple isn't ripe yet. Whatever you're looking for isn't here.</p>
+    <a class="home" href="/">← back to PINE</a>
+  </main>
+</body>
+</html>
