@@ -534,6 +534,28 @@
     color: rgba(245,240,225,0.35);
   }
 
+  .footer-links{
+      display: flex;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-bottom: 0.6rem;
+    }
+  
+    .footer-links img{
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      opacity: 0.4;
+      filter: grayscale(1);
+      transition: all 0.2s ease;
+    }
+  
+    .footer-links a:hover img{
+      opacity: 1;
+      filter: grayscale(0);
+      transform: translateY(-1px);
+    }
+  
   @media (prefers-reduced-motion: reduce){
     .mascota{ animation: none; }
     .estado .punto{ animation: none; }
@@ -712,8 +734,15 @@
     </div>
     
   </main>
-  <footer>made with pineapple juice 🍍 </footer>
-
+  
+  <footer>
+    <div class="footer-links">
+      <a href="https://x.com/jordigon1" target="_blank" rel="noopener noreferrer"><img src="/x.png" alt="X" /></a>
+      <a href="https://farcaster.xyz/rdb" target="_blank" rel="noopener noreferrer"><img src="/farcaster.png" alt="Farcaster" /></a>
+    </div>
+    made with pineapple juice 🍍
+  </footer>
+  
 <script>
     const audio = document.getElementById('pineAudio');
   let fadeInterval;
