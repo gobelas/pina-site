@@ -376,6 +376,123 @@
     color: var(--leaf);
   }
 
+.social-section{
+    width: min(90vw, 420px);
+    margin-top: 2rem;
+  }
+
+  .share-buttons{
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .share-btn{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 0.5rem;
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 14px;
+    background: rgba(245,240,225,0.03);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .share-btn:hover{
+    border-color: rgba(255,194,51,0.6);
+    background: rgba(245,240,225,0.06);
+    transform: translateY(-2px);
+  }
+
+  .share-btn img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .share-btn span{
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--cream-dim);
+  }
+
+  .feed-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .feed-card{
+    text-align: left;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 14px;
+    background: rgba(245,240,225,0.03);
+  }
+
+  .feed-header{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feed-header img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .feed-name{
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  .feed-handle{
+    font-size: 0.72rem;
+    color: var(--cream-dim);
+  }
+
+  .feed-date{
+    margin-left: auto;
+    font-size: 0.68rem;
+    color: var(--cream-dim);
+    white-space: nowrap;
+  }
+
+  .feed-text{
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--cream);
+  }
+
+  .feed-more{
+    display: block;
+    text-align: center;
+    margin-top: 0.9rem;
+    padding: 0.6rem;
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 12px;
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .feed-more:hover{
+    border-color: rgba(255,194,51,0.6);
+    color: var(--cream);
+  }
+
+
+  
   .estado .punto{
     width: 8px;
     height: 8px;
@@ -558,6 +675,50 @@
     </div>
 
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
+
+<div class="social-section">
+      <p class="buy-eyebrow">Share the juice</p>
+      <div class="share-buttons">
+        <a class="share-btn" href="https://twitter.com/intent/tweet?text=%24PINE%20%F0%9F%8D%8D&url=https%3A%2F%2Fpine-six-alpha.vercel.app%2F" target="_blank" rel="noopener noreferrer">
+          <img src="/x.png" alt="X" />
+          <span>X</span>
+        </a>
+        <a class="share-btn" href="https://t.me/share/url?url=https%3A%2F%2Fpine-six-alpha.vercel.app%2F&text=%24PINE%20%F0%9F%8D%8D" target="_blank" rel="noopener noreferrer">
+          <img src="/telegram.png" alt="Telegram" />
+          <span>Telegram</span>
+        </a>
+        <a class="share-btn" href="https://warpcast.com/~/compose?text=%24PINE%20%F0%9F%8D%8D&embeds[]=https%3A%2F%2Fpine-six-alpha.vercel.app%2F" target="_blank" rel="noopener noreferrer">
+          <img src="/farcaster.png" alt="Farcaster" />
+          <span>Farcaster</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="social-section">
+      <p class="buy-eyebrow">Latest from X</p>
+      <div class="feed-list">
+        <div class="feed-card">
+          <div class="feed-header">
+            <img src="/favicon.png" alt="PINE" />
+            <span class="feed-name">PINE 🍍</span>
+            <span class="feed-handle">@jordigon1</span>
+            <span class="feed-date">Jul 24</span>
+          </div>
+          <p class="feed-text">Nuevos DEX para $PINE en @solana 🍍</p>
+        </div>
+        <div class="feed-card">
+          <div class="feed-header">
+            <img src="/favicon.png" alt="PINE" />
+            <span class="feed-name">PINE 🍍</span>
+            <span class="feed-handle">@jordigon1</span>
+            <span class="feed-date">Jul 24</span>
+          </div>
+          <p class="feed-text">$PINE llega a @virtuals_io 🍍</p>
+        </div>
+      </div>
+      <a class="feed-more" href="https://x.com/jordigon1" target="_blank" rel="noopener noreferrer">See more on X →</a>
+    </div>
+
     
     <div class="roadmap-section">
       <p class="buy-eyebrow">Roadmap</p>
