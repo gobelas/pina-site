@@ -419,6 +419,14 @@
     color: var(--cream-dim);
   }
 
+  .feed-embed{
+    border: 1px solid rgba(255,194,51,0.28);
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(245,240,225,0.03);
+    min-height: 200px;
+  }
+  
   .feed-list{
     display: flex;
     flex-direction: column;
@@ -696,27 +704,10 @@
 
     <div class="social-section">
       <p class="buy-eyebrow">Latest from X</p>
-      <div class="feed-list">
-        <div class="feed-card">
-          <div class="feed-header">
-            <img src="/favicon.png" alt="PINE" />
-            <span class="feed-name">PINE 🍍</span>
-            <span class="feed-handle">@jordigon1</span>
-            <span class="feed-date">Jul 24</span>
-          </div>
-          <p class="feed-text">Nuevos DEX para $PINE en @solana 🍍</p>
-        </div>
-        <div class="feed-card">
-          <div class="feed-header">
-            <img src="/favicon.png" alt="PINE" />
-            <span class="feed-name">PINE 🍍</span>
-            <span class="feed-handle">@jordigon1</span>
-            <span class="feed-date">Jul 24</span>
-          </div>
-          <p class="feed-text">$PINE llega a @virtuals_io 🍍</p>
-        </div>
+      <div class="feed-embed">
+        <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="3" href="https://twitter.com/jordigon1?ref_src=twsrc%5Etfw">Tweets by @jordigon1</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
-      <a class="feed-more" href="https://x.com/jordigon1" target="_blank" rel="noopener noreferrer">See more on X →</a>
     </div>
 
     
