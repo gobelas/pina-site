@@ -126,6 +126,7 @@
 
   .chain-tabs{
     display: flex;
+    flex-wrap: wrap;
     gap: 0.6rem;
     width: min(90vw, 420px);
     margin-top: 1.8rem;
@@ -133,6 +134,7 @@
 
   .chain-tab{
     flex: 1;
+    min-width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -580,6 +582,9 @@
       <div class="chain-tab" data-chain="hood" onclick="switchChain('hood')">
         <img src="/robinhood.png" alt="Robinhood" /> Robinhood
       </div>
+      <div class="chain-tab" data-chain="stable" onclick="switchChain('stable')">
+        <img src="/stable.jpg" alt="Stable" /> Stable
+      </div>
     </div>
 
     <div class="info-card" id="info-base">
@@ -600,6 +605,13 @@
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Robinhood</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">ETH</span></div>
       <div class="info-row"><span class="info-label">CA</span><span class="info-value">It depends on the dapp</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+
+    <div class="info-card" id="info-stable" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Stable</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">gUSDT</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-stable" onclick="copiarCA('ca-stable')">0x887c716ab36d5eff78ba438ee89a4deffffdcdc8</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
 
@@ -693,6 +705,24 @@
         </a>
 
         
+      </div>
+    </div>
+
+    <div class="buy-section" id="buy-stable" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://prismapad.fun/t/0x887c716ab36d5eff78ba438ee89a4deffffdcdc8" target="_blank" rel="noopener noreferrer">
+          <img src="/prismapad.jpg" alt="prismapad.fun" />
+          <span class="buy-text"><span class="buy-name">prismapad.fun</span><span class="buy-sub">Launch page</span></span>
+        </a>
+        <a class="buy-btn" href="https://dyorswap.finance/swap/?chainId=988&inputCurrency=GUSDT&outputCurrency=0x887C716ab36D5EfF78ba438EE89a4deffFFDcDC8" target="_blank" rel="noopener noreferrer">
+          <img src="/dyorswap.jpg" alt="dyorswap.finance" />
+          <span class="buy-text"><span class="buy-name">dyorswap.finance</span><span class="buy-sub">Swap on Stable</span></span>
+        </a>
+        <a class="buy-btn" href="https://swap.stable.xyz/swap?chain=stable&inputCurrency=0x887C716ab36D5EfF78ba438EE89a4deffFFDcDC8&outputCurrency=0x779Ded0c9e1022225f8E0630b35a9b54bE713736&value=38366.872784492700413237&field=INPUT" target="_blank" rel="noopener noreferrer">
+          <img src="/stable.jpg" alt="stable.xyz" />
+          <span class="buy-text"><span class="buy-name">stable.xyz</span><span class="buy-sub">Official swap</span></span>
+        </a>
       </div>
     </div>
 
@@ -822,9 +852,11 @@
     document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('info-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
+    document.getElementById('info-stable').style.display = chain === 'stable' ? '' : 'none';
     document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('buy-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('buy-hood').style.display = chain === 'hood' ? '' : 'none';
+    document.getElementById('buy-stable').style.display = chain === 'stable' ? '' : 'none';
     document.getElementById('copyHint').textContent = '';
   }
 </script>
