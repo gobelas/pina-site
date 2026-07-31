@@ -165,13 +165,18 @@
   }
 
   .chain-chevron{
-    color: var(--cream-dim);
-    font-size: 0.7rem;
+    width: 7px;
+    height: 7px;
+    border: solid var(--cream-dim);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
     transition: transform 0.2s ease;
+    margin-top: -4px;
   }
 
   .chain-select.open .chain-chevron{
-    transform: rotate(180deg);
+    transform: rotate(225deg);
+    margin-top: 2px;
   }
 
   .chain-list{
@@ -633,7 +638,7 @@
       <div class="chain-trigger" onclick="toggleChainList()">
         <img id="chainTriggerIcon" src="/base-chain.png" alt="" />
         <span id="chainTriggerName">Base</span>
-        <span class="chain-chevron">▾</span>
+        <span class="chain-chevron"></span>
       </div>
       <div class="chain-list">
         <div class="chain-option active" data-chain="base" onclick="selectChain('base', '/base-chain.png', 'Base')">
