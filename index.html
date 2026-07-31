@@ -124,49 +124,106 @@
     text-shadow: 0 2px 0 rgba(0,0,0,0.15);
   }
 
-  .chain-tabs{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+  .chain-select{
+    position: relative;
     width: min(90vw, 420px);
     margin-top: 1.8rem;
   }
 
-  .chain-tab{
-    flex: 1;
-    min-width: 90px;
+  .chain-trigger{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.55rem 0.7rem;
-    border: 1px solid rgba(245,240,225,0.12);
+    gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(255,194,51,0.4);
     border-radius: 12px;
-    background: rgba(245,240,225,0.03);
+    background: rgba(255,194,51,0.08);
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--cream-dim);
   }
 
-  .chain-tab img{
-    width: 20px;
-    height: 20px;
+  .chain-trigger:hover{
+    border-color: rgba(255,194,51,0.6);
+  }
+
+  .chain-trigger img{
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
   }
 
-  .chain-tab:hover:not(.active){
-    border-color: rgba(245,240,225,0.25);
+  .chain-trigger span{
+    flex: 1;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--cream);
   }
 
-  .chain-tab.active{
-    border-color: rgba(255,194,51,0.6);
+  .chain-chevron{
+    color: var(--cream-dim);
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+  }
+
+  .chain-select.open .chain-chevron{
+    transform: rotate(180deg);
+  }
+
+  .chain-list{
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(245,240,225,0.14);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    overflow: hidden;
+    z-index: 20;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  }
+
+  .chain-select.open .chain-list{
+    display: block;
+  }
+
+  .chain-option{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(245,240,225,0.06);
+    transition: background 0.15s ease;
+  }
+
+  .chain-option:last-child{ border-bottom: none; }
+
+  .chain-option:hover{
+    background: rgba(245,240,225,0.05);
+  }
+
+  .chain-option.active{
     background: rgba(255,194,51,0.08);
+  }
+
+  .chain-option img{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .chain-option span{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
     color: var(--cream);
   }
 
@@ -572,18 +629,25 @@
     <p class="eyebrow">Certified tropical flavor</p>
     <h1>PINE</h1>
 
-    <div class="chain-tabs">
-      <div class="chain-tab active" data-chain="base" onclick="switchChain('base')">
-        <img src="/base-chain.png" alt="Base" /> Base
+    <div class="chain-select" id="chainSelect">
+      <div class="chain-trigger" onclick="toggleChainList()">
+        <img id="chainTriggerIcon" src="/base-chain.png" alt="" />
+        <span id="chainTriggerName">Base</span>
+        <span class="chain-chevron">▾</span>
       </div>
-      <div class="chain-tab" data-chain="solana" onclick="switchChain('solana')">
-        <img src="/solana.jpg" alt="Solana" /> Solana
-      </div>
-      <div class="chain-tab" data-chain="hood" onclick="switchChain('hood')">
-        <img src="/robinhood.png" alt="Robinhood" /> Robinhood
-      </div>
-      <div class="chain-tab" data-chain="stable" onclick="switchChain('stable')">
-        <img src="/stable.jpg" alt="Stable" /> Stable
+      <div class="chain-list">
+        <div class="chain-option active" data-chain="base" onclick="selectChain('base', '/base-chain.png', 'Base')">
+          <img src="/base-chain.png" alt="" /> <span>Base</span>
+        </div>
+        <div class="chain-option" data-chain="solana" onclick="selectChain('solana', '/solana.jpg', 'Solana')">
+          <img src="/solana.jpg" alt="" /> <span>Solana</span>
+        </div>
+        <div class="chain-option" data-chain="hood" onclick="selectChain('hood', '/robinhood.png', 'Robinhood')">
+          <img src="/robinhood.png" alt="" /> <span>Robinhood</span>
+        </div>
+        <div class="chain-option" data-chain="stable" onclick="selectChain('stable', '/stable.jpg', 'Stable')">
+          <img src="/stable.jpg" alt="" /> <span>Stable</span>
+        </div>
       </div>
     </div>
 
@@ -848,7 +912,7 @@
   }
 
   function switchChain(chain){
-    document.querySelectorAll('.chain-tab').forEach(t => t.classList.toggle('active', t.dataset.chain === chain));
+    document.querySelectorAll('.chain-option').forEach(o => o.classList.toggle('active', o.dataset.chain === chain));
     document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('info-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
@@ -859,6 +923,24 @@
     document.getElementById('buy-stable').style.display = chain === 'stable' ? '' : 'none';
     document.getElementById('copyHint').textContent = '';
   }
+
+  function toggleChainList(){
+    document.getElementById('chainSelect').classList.toggle('open');
+  }
+
+  function selectChain(chain, icon, name){
+    document.getElementById('chainTriggerIcon').src = icon;
+    document.getElementById('chainTriggerName').textContent = name;
+    document.getElementById('chainSelect').classList.remove('open');
+    switchChain(chain);
+  }
+
+  document.addEventListener('click', (e) => {
+    const select = document.getElementById('chainSelect');
+    if(!select.contains(e.target)){
+      select.classList.remove('open');
+    }
+  });
 </script>
 </body>
 </html>
