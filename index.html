@@ -654,6 +654,9 @@
         <div class="chain-option" data-chain="stable" onclick="selectChain('stable', '/stable.jpg', 'Stable')">
           <img src="/stable.jpg" alt="" /> <span>Stable</span>
         </div>
+        <div class="chain-option" data-chain="bnb" onclick="selectChain('bnb', '/bnbchain.jpg', 'BNB Chain')">
+          <img src="/bnbchain.jpg" alt="" /> <span>BNB Chain</span>
+        </div>
       </div>
     </div>
 
@@ -682,6 +685,13 @@
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Stable</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">gUSDT</span></div>
       <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-stable" onclick="copiarCA('ca-stable')">0x887c716ab36d5eff78ba438ee89a4deffffdcdc8</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+
+    <div class="info-card" id="info-bnb" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">BNB Chain</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">BNB</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value">It depends on the dapp</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
 
@@ -792,6 +802,20 @@
         <a class="buy-btn" href="https://swap.stable.xyz/swap?chain=stable&inputCurrency=0x887C716ab36D5EfF78ba438EE89a4deffFFDcDC8&outputCurrency=0x779Ded0c9e1022225f8E0630b35a9b54bE713736&value=38366.872784492700413237&field=INPUT" target="_blank" rel="noopener noreferrer">
           <img src="/stable.jpg" alt="stable.xyz" />
           <span class="buy-text"><span class="buy-name">stable.xyz</span><span class="buy-sub">Official swap</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="buy-section" id="buy-bnb" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://flap.sh/bnb/0xa8903debd1a1e7935fb742323aba4088ebd18888?lang=en" target="_blank" rel="noopener noreferrer">
+          <img src="/flapdotsh.jpg" alt="flap.sh" />
+          <span class="buy-text"><span class="buy-name">flap.sh</span><span class="buy-sub">0xa8903debd1a1e7935fb742323aba4088ebd18888</span></span>
+        </a>
+        <a class="buy-btn" href="https://four.meme/en/token/0xb80461f66ff3d2b3112569757a140fd835e84444" target="_blank" rel="noopener noreferrer">
+          <img src="/fourdotmemezh.jpg" alt="four.meme" />
+          <span class="buy-text"><span class="buy-name">four.meme</span><span class="buy-sub">0xb80461f66ff3d2b3112569757a140fd835e84444</span></span>
         </a>
       </div>
     </div>
@@ -923,10 +947,12 @@
     document.getElementById('info-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('info-stable').style.display = chain === 'stable' ? '' : 'none';
+    document.getElementById('info-bnb').style.display = chain === 'bnb' ? '' : 'none';
     document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('buy-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('buy-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('buy-stable').style.display = chain === 'stable' ? '' : 'none';
+    document.getElementById('buy-bnb').style.display = chain === 'bnb' ? '' : 'none';
     document.getElementById('copyHint').textContent = '';
   }
 
