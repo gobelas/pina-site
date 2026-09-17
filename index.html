@@ -657,6 +657,9 @@
         <div class="chain-option" data-chain="bnb" onclick="selectChain('bnb', '/bnbchain.jpg', 'BNB Chain')">
           <img src="/bnbchain.jpg" alt="" /> <span>BNB Chain</span>
         </div>
+        <div class="chain-option" data-chain="arc" onclick="selectChain('arc', '/arc.jpg', 'Arc Chain')">
+          <img src="/arc.jpg" alt="" /> <span>Arc Chain</span>
+        </div>
       </div>
     </div>
 
@@ -695,6 +698,13 @@
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
 
+    <div class="info-card" id="info-arc" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Arc Chain</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">Arc</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-stable" onclick="copiarCA('ca-stable')">0x9bC3247751DB0Bb97857961109CdA5E905104901</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+    
     <span class="copy-hint" id="copyHint"></span>
 
     <div class="buy-section" id="buy-base">
@@ -820,6 +830,17 @@
       </div>
     </div>
 
+      <div class="buy-section" id="buy-arc" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://argus.world/token/0x9bC3247751DB0Bb97857961109CdA5E905104901" target="_blank" rel="noopener noreferrer">
+          <img src="/argus.jpg" alt="argus.world" />
+          <span class="buy-text"><span class="buy-name">argus.world</span><span class="buy-sub">Launch page</span></span>
+        </a>        
+      </div>
+    </div>
+
+    
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
 
 <div class="social-section">
