@@ -701,7 +701,7 @@
     <div class="info-card" id="info-arc" style="display:none">
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">Arc Chain</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">Arc</span></div>
-      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-arc" onclick="copiarCA('ca-stable')">0x9bC3247751DB0Bb97857961109CdA5E905104901</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-arc" onclick="copiarCA('ca-arc')">0x9bC3247751DB0Bb97857961109CdA5E905104901</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
     
@@ -964,16 +964,21 @@
 
   function switchChain(chain){
     document.querySelectorAll('.chain-option').forEach(o => o.classList.toggle('active', o.dataset.chain === chain));
+    
     document.getElementById('info-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('info-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('info-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('info-stable').style.display = chain === 'stable' ? '' : 'none';
     document.getElementById('info-bnb').style.display = chain === 'bnb' ? '' : 'none';
+    document.getElementById('info-arc').style.display = chain === 'arc' ? '' : 'none';
+    
     document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('buy-solana').style.display = chain === 'solana' ? '' : 'none';
     document.getElementById('buy-hood').style.display = chain === 'hood' ? '' : 'none';
     document.getElementById('buy-stable').style.display = chain === 'stable' ? '' : 'none';
     document.getElementById('buy-bnb').style.display = chain === 'bnb' ? '' : 'none';
+    document.getElementById('buy-arc').style.display = chain === 'arc' ? '' : 'none';
+    
     document.getElementById('copyHint').textContent = '';
   }
 
