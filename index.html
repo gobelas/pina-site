@@ -663,6 +663,9 @@
         <div class="chain-option" data-chain="near" onclick="selectChain('near', '/near.jpg', 'NEAR')">
           <img src="/near.jpg" alt="" /> <span>NEAR</span>
         </div>
+        <div class="chain-option" data-chain="sui" onclick="selectChain('sui', '/sui.jpg', 'SUI')">
+          <img src="/sui.jpg" alt="" /> <span>SUI</span>
+        </div>
       </div>
     </div>
 
@@ -712,6 +715,13 @@
       <div class="info-row"><span class="info-label">Chain</span><span class="info-value">NEAR</span></div>
       <div class="info-row"><span class="info-label">Quote</span><span class="info-value">NEAR</span></div>
       <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-near" onclick="copiarCA('ca-near')">pine.nearlytrade.near</span></div>
+      <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
+    </div>
+
+    <div class="info-card" id="info-sui" style="display:none">
+      <div class="info-row"><span class="info-label">Chain</span><span class="info-value">SUI</span></div>
+      <div class="info-row"><span class="info-label">Quote</span><span class="info-value">USDC</span></div>
+      <div class="info-row"><span class="info-label">CA</span><span class="info-value address" id="ca-sui" onclick="copiarCA('ca-sui')">0xf9f056e2af55c53e73c68d40a023bba83436513693854120b3dc5722b76c60a1::pine::PINE</span></div>
       <div class="info-row"><span class="info-label">Total supply</span><span class="info-value">1B</span></div>
     </div>
     
@@ -860,6 +870,16 @@
       </div>
     </div>
 
+    <div class="buy-section" id="buy-sui" style="display:none">
+      <p class="buy-eyebrow">Get some</p>
+      <div class="buy-buttons">
+        <a class="buy-btn" href="https://popularsui.xyz/token/0xceae43bfeeb093584f29850e768c5d44ccaa160ee6d3ff016972f1f0899959ad" target="_blank" rel="noopener noreferrer">
+          <img src="/popular.jpg" alt="popularsui.xyz" />
+          <span class="buy-text"><span class="buy-name">popularsui.xyz</span><span class="buy-sub">Swap on SUI</span></span>
+        </a>
+      </div>
+    </div>
+
     
     <div class="estado off" id="estado" onclick="toggleModo()"><span class="punto"></span> <span id="estadoTexto">Pine mode: off</span></div>
 
@@ -992,6 +1012,7 @@
     document.getElementById('info-bnb').style.display = chain === 'bnb' ? '' : 'none';
     document.getElementById('info-arc').style.display = chain === 'arc' ? '' : 'none';
     document.getElementById('info-near').style.display = chain === 'near' ? '' : 'none';
+    document.getElementById('info-sui').style.display = chain === 'sui' ? '' : 'none';
     
     document.getElementById('buy-base').style.display = chain === 'base' ? '' : 'none';
     document.getElementById('buy-solana').style.display = chain === 'solana' ? '' : 'none';
@@ -1000,6 +1021,7 @@
     document.getElementById('buy-bnb').style.display = chain === 'bnb' ? '' : 'none';
     document.getElementById('buy-arc').style.display = chain === 'arc' ? '' : 'none';
     document.getElementById('buy-near').style.display = chain === 'near' ? '' : 'none';
+    document.getElementById('buy-sui').style.display = chain === 'sui' ? '' : 'none';
     
     document.getElementById('copyHint').textContent = '';
   }
