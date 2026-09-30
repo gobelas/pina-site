@@ -106,4 +106,15 @@ window.CHAINS = {
       { name: 'popularsui.xyz', icon: '/popular.jpg', sub: 'Swap on SUI', url: 'https://popularsui.xyz/token/0xceae43bfeeb093584f29850e768c5d44ccaa160ee6d3ff016972f1f0899959ad' },
     ]
   },
+
+  ronin: {
+    name: 'RON',
+    icon: '/ronin.jpg',
+    quote: 'RONKE',
+    ca: '0x402b0a1C100F1dE639451d31C5678d3EFFED1c31',
+    supply: '1B',
+    buys: [
+      { name: 'ronkeverse.fun', icon: '/ronke.jpg', sub: 'Swap on RONKE', url: 'https://ronkeverse.fun/' },
+    ]
+  },
 };
