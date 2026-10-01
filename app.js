@@ -104,12 +104,25 @@ function renderInfoCard(){
 function renderBuyButtons(){
   const c = window.CHAINS[currentChain];
   const wrap = document.getElementById('buyButtons');
-  wrap.innerHTML = c.buys.map(b => `
-    <a class="buy-btn" href="${b.url}" target="_blank" rel="noopener noreferrer">
-      <img src="${b.icon}" alt="${b.name}" />
-      <span class="buy-text"><span class="buy-name">${b.name}</span><span class="buy-sub">${b.sub}</span></span>
-    </a>
-  `).join('');
+  wrap.innerHTML = c.buys.map(b => {
+    if (b.disabled) {
+      return `
+        <div class="buy-btn disabled" title="Temporarily not available">
+          <img src="${b.icon}" alt="${b.name}" />
+          <span class="buy-text">
+            <span class="buy-name">${b.name}</span>
+            <span class="buy-sub">temporarily not available</span>
+          </span>
+        </div>
+      `;
+    }
+    return `
+      <a class="buy-btn" href="${b.url}" target="_blank" rel="noopener noreferrer">
+        <img src="${b.icon}" alt="${b.name}" />
+        <span class="buy-text"><span class="buy-name">${b.name}</span><span class="buy-sub">${b.sub}</span></span>
+      </a>
+    `;
+  }).join('');
 }
 
 function renderTrigger(){
