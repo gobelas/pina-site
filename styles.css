@@ -327,6 +327,23 @@ h1{
   letter-spacing: 0.02em;
 }
 
+.buy-btn.disabled{
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.7);
+}
+
+.buy-btn.disabled .buy-name{
+  color: var(--cream-dim);
+}
+
+.buy-btn.disabled .buy-sub{
+  color: var(--coral);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .roadmap-section{
   width: min(90vw, 420px);
   margin-top: 2.4rem;
