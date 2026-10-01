@@ -43,8 +43,8 @@ window.CHAINS = {
       { name: 'ponsfamily.com',  icon: '/pons.jpg',       sub: '0x18B273B30AC93C837eD4752ADBeC6C9B7c10a681', url: 'https://ponsfamily.com/launchpad/0x18b273b30ac93c837ed4752adbec6c9b7c10a681' },
       { name: 'bow.fun',         icon: '/bowfun.png',     sub: '0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03', url: 'https://bow.fun/index.html?token=0x2Ae546B7D278ee105C45C967F1Bb007d3d7acb03' },
       { name: 'robinfun.live',   icon: '/robinfun.jpg',   sub: '0xe2c2ce90ced9eeb373b7260078eb1b7bc36c4663', url: 'https://robinfun.live/token/0xe2c2ce90ced9eeb373b7260078eb1b7bc36c4663' },
-      { name: 'vlad.fun',        icon: '/vladdotfun.jpg', sub: '0x637b0189223CBEEfC8AEA9Dc3A34fA4244D857f5', url: 'https://www.vlad.fun/coin/0x637b0189223CBEEfC8AEA9Dc3A34fA4244D857f5' },
-      { name: 'leavehood.com',   icon: '/leave.jpg',      sub: '0x936128fd2349706e73ef24981476aaf9abc59fda', url: 'https://leavehood.com/token/0x936128fd2349706e73ef24981476aaf9abc59fda' },
+      { name: 'vlad.fun',        icon: '/vladdotfun.jpg', sub: '0x637b0189223CBEEfC8AEA9Dc3A34fA4244D857f5', url: 'https://www.vlad.fun/coin/0x637b0189223CBEEfC8AEA9Dc3A34fA4244D857f5', disabled: true },
+      { name: 'leavehood.com',   icon: '/leave.jpg',      sub: '0x936128fd2349706e73ef24981476aaf9abc59fda', url: 'https://leavehood.com/token/0x936128fd2349706e73ef24981476aaf9abc59fda', disabled: true },
       { name: 'recurve.fi',      icon: '/recurve.png',    sub: '0xB72DbaBEe9b3403E43BC79E7E5E73ABa98095A5e', url: 'https://recurve.fi/0xB72DbaBEe9b3403E43BC79E7E5E73ABa98095A5e' },
     ]
   },
