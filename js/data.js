@@ -106,14 +106,25 @@ window.CHAINS = {
     ]
   },
   
-    injective: {
+  ronin: {
+    name: 'RON',
+    icon: CHAIN_ICON + 'ronin.jpg',
+    quote: 'RONKE',
+    ca: '0x402b0a1C100F1dE639451d31C5678d3EFFED1c31',
+    supply: '1B',
+    buys: [
+      { name: 'ronkeverse.fun', icon: DEX_ICON + 'ronke.jpg', sub: 'Swap on Ronkeverse', url: 'https://ronkeverse.fun/#' },
+    ]
+  },
+    
+  injective: {
     name: 'INJ',
-    icon: '/injective.png',
+	icon: CHAIN_ICON + 'injective.png',    
     quote: 'INJ',
     ca: '0x16977480512c9A97F5064405305008c24b7C0965',
     supply: '1B',
     buys: [
-      { name: 'runup.fun', icon: '/runup.jpg', sub: 'Launch page', url: 'https://runup.fun/coin/0x16977480512c9A97F5064405305008c24b7C0965' },
+      { name: 'runup.fun', icon: DEX_ICON + 'runup.jpg', sub: 'Launch page', url: 'https://runup.fun/coin/0x16977480512c9A97F5064405305008c24b7C0965' },
     ]
   },
   
