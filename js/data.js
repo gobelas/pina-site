@@ -117,4 +117,16 @@ window.CHAINS = {
       { name: 'ronkeverse.fun', icon: '/ronke.jpg', sub: 'Swap on RONKE', url: 'https://ronkeverse.fun/' },
     ]
   },
+  
+    injective: {
+    name: 'INJ',
+    icon: '/injective.png',
+    quote: 'INJ',
+    ca: '0x16977480512c9A97F5064405305008c24b7C0965',
+    supply: '1B',
+    buys: [
+      { name: 'runup.fun', icon: '/runup.jpg', sub: 'Launch page', url: 'https://runup.fun/coin/0x16977480512c9A97F5064405305008c24b7C0965' },
+    ]
+  },
+  
 };
